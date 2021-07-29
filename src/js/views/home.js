@@ -1,9 +1,22 @@
-import React from "react";
+import React, { useState } from "react";
 import rigoImage from "../../img/rigo-baby.jpg";
 import "../../styles/home.scss";
+import { signIn } from "../utilities/signIn";
 
 export const Home = () => (
-	<span>
+	const [email, setEmail] = useState("");
+	const [password, setPassword] = useState("");
+
+	const onSignInClicked= async (email, password) => {
+		try{
+			await signIn(email, password)
+		}catch(e){
+			alert(e.message)
+		}
+	}
+
+	return (
+		 <span>
 		<div className="sidenav">
 			<div className="login-main-text">
 				<h2>
@@ -19,11 +32,14 @@ export const Home = () => (
 					<form>
 						<div className="form-group">
 							<label>Email</label>
-							<input type="text" className="form-control" placeholder="Email" />
+							<input type="text" className="form-control" placeholder="Email" onChange ={(e) => setEmail(e.target.value)}
+							/>
 						</div>
 						<div className="form-group">
 							<label>Password</label>
-							<input type="password" className="form-control" placeholder="Password" />
+							<input type="password" className="form-control" placeholder="Password" 
+							onChange ={(e) => setPassword(e.target.value)}
+							/>
 						</div>
 						<button type="submit" className="btn btn-black">
 							Login
@@ -36,4 +52,5 @@ export const Home = () => (
 			</div>
 		</div>
 	</span>
+	)
 );
