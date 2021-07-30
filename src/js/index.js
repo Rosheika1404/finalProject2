@@ -15,9 +15,6 @@ import "../styles/index.scss";
 //import your own components
 import Layout from "./layout";
 
-//render your react application
-ReactDOM.render(<Layout />, document.querySelector("#app"));
-
 //firebase
 var firebaseConfig = {
 	apiKey: "AIzaSyDIQV8s86trzHADBLHRWLrP_Yqc5KrXl-4",
@@ -32,3 +29,6 @@ var firebaseConfig = {
 firebase.initializeApp(firebaseConfig);
 firebase.analytics();
 firebase.auth();
+
+//render your react application
+ReactDOM.render(<Layout />, document.querySelector("#app"));
