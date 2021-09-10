@@ -1,11 +1,11 @@
 // Declare a function to signOut
 import firebase from "firebase/app";
 
-export const siginOut = async () => {
+export const signOut = async () => {
 	try {
 		await firebase.auth().signOut();
-		console.log("logout");
+		alert("Logout successful");
 	} catch (e) {
-		throw new Error("error signing out");
+		throw new Error("Error signing out");
 	}
 };
