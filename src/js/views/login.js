@@ -2,7 +2,6 @@ import React, { useState, useEffect, useContext } from "react";
 import { useHistory } from "react-router-dom";
 import { Link } from "react-router-dom";
 import { Context } from "../store/appContext";
-import { signIn } from "../utilities/signIn";
 
 import "../../styles/login.scss";
 
@@ -18,7 +17,7 @@ export const Login = () => {
 
 	const onSignInClicked = async (email, password) => {
 		try {
-			await actions.signIn(email, password);
+			await actions.login(email, password);
 			history.push("/");
 			alert("Login success");
 		} catch (e) {
@@ -50,7 +49,7 @@ export const Login = () => {
 					// transform: "translate(-50%, -50%)"
 				}}>
 				<div className="login-main-text">
-					<p>Welcome back! Log in to your account</p>
+					<p>Login to play.</p>
 				</div>
 				<div className="col-md-6 col-sm-12">
 					<div className="login-form">

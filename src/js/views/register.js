@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 import { signUp } from "../utilities/signUp";
 import { Context } from "../store/appContext";
 
-import "../../styles/register.scss";
+import "../../styles/login.scss";
 
 export const Register = () => {
 	const { store, actions } = useContext(Context);
@@ -16,7 +16,7 @@ export const Register = () => {
 
 	const onSignUpClicked = async (email, password) => {
 		try {
-			await actions.signUp(displayName, email, password);
+			await actions.signUp(displayName, email, password, store.userId);
 			history.push("/");
 			console.log("account created");
 		} catch (e) {
