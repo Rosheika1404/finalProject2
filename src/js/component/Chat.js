@@ -17,7 +17,13 @@ function Chat() {
 	}, []);
 	return (
 		<div>
-			<signOut />
+			<button
+				className="btn btn-primary"
+				onClick={() => {
+					signOut();
+				}}>
+				Logout
+			</button>
 			<div className="msgs">
 				{messages.map(({ id, text, photoURL, uid }) => (
 					<div key={id} className={`msg ${uid === auth.currentUser.uid ? "sent" : "received"}`}>
