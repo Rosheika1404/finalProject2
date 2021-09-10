@@ -5,6 +5,7 @@ import ReactDOM from "react-dom";
 import firebase from "firebase/app";
 import "firebase/analytics";
 import "firebase/auth";
+import "firebase/firestore";
 
 //include bootstrap npm library into the bundle
 import "bootstrap/dist/css/bootstrap.css";
@@ -15,20 +16,23 @@ import "../styles/index.scss";
 //import your own components
 import Layout from "./layout";
 
-//firebase
-var firebaseConfig = {
-	apiKey: "AIzaSyDIQV8s86trzHADBLHRWLrP_Yqc5KrXl-4",
-	authDomain: "authentication-exercise-6b47a.firebaseapp.com",
-	projectId: "authentication-exercise-6b47a",
-	storageBucket: "authentication-exercise-6b47a.appspot.com",
-	messagingSenderId: "207069567467",
-	appId: "1:207069567467:web:0e7a788e8a59054790a1ae",
-	measurementId: "G-5TBVDLS227"
+const firebaseConfig = {
+	apiKey: "AIzaSyA2hNxpDy2uAXd_O4aru1XM2pxl486blIw",
+	authDomain: "final-project-1961d.firebaseapp.com",
+	projectId: "final-project-1961d",
+	storageBucket: "final-project-1961d.appspot.com",
+	messagingSenderId: "684528619805",
+	appId: "1:684528619805:web:6b4a3d6166d44150c651f4",
+	measurementId: "G-HKJSP7M1C0"
 };
+
 // Initialize Firebase
 firebase.initializeApp(firebaseConfig);
 firebase.analytics();
-firebase.auth();
+const auth = firebase.auth();
+const db = firebase.firestore();
+
+export { db, auth };
 
 //render your react application
 ReactDOM.render(<Layout />, document.querySelector("#app"));

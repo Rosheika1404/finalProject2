@@ -1,42 +1,43 @@
+import firebase from "firebase/app";
 const getState = ({ getStore, getActions, setStore }) => {
 	return {
 		store: {
-			demo: [
-				{
-					title: "FIRST",
-					background: "white",
-					initial: "white"
-				},
-				{
-					title: "SECOND",
-					background: "white",
-					initial: "white"
-				}
-			]
+			user: null,
+			isLoggedIn: []
 		},
 		actions: {
-			// Use getActions to call a function within a fuction
-			exampleFunction: () => {
-				getActions().changeColor(0, "green");
-			},
-			loadSomeData: () => {
-				/**
-					fetch().then().then(data => setStore({ "foo": data.bar }))
-				*/
-			},
-			changeColor: (index, color) => {
-				//get the store
-				const store = getStore();
+			actions: {
+				// Use getActions to call a function within a fuction
 
-				//we have to loop the entire demo array to look for the respective index
-				//and change its color
-				const demo = store.demo.map((elm, i) => {
-					if (i === index) elm.background = color;
-					return elm;
-				});
+				//Signup
+				signUp: (displayName, email, password) => {
+					const db = firebase.firestore();
+					firebase
+						.auth()
+						.createUserWithEmailAndPassword(email, password)
+						.then(currentUser => {
+							return currentUser.user.updateProfile({
+								displayName: displayName
+							});
+						});
+				},
+				// Login
+				login: (email, password) => {
+					return firebase.auth().signInWithEmailAndPassword(email, password);
+				},
+				loadLoggedInUser: () => {
+					const actions = getActions();
 
-				//reset the global store
-				setStore({ demo: demo });
+					firebase.auth().onAuthStateChanged(function(user) {
+						if (user !== null) {
+							console.log("user", user);
+							setStore({ isLoggedIn: true, user });
+							// actions.loadAllGames();
+						} else {
+							setStore({ isLoggedIn: false, user: null });
+						}
+					});
+				}
 			}
 		}
 	};

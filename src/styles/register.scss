@@ -1,0 +1,95 @@
+.card {
+    margin-bottom: 20px;
+    border: none
+}
+
+.box {
+    width: 500px;
+    padding: 40px;
+    margin: 0;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    // position: absolute;
+    // display: block;
+    // top: auto;
+    // left: auto;
+    background: #191919;
+    text-align: center;
+    transition: 0.25s;
+    margin-top: 300px;
+}
+
+
+.box input[type="text"],
+.box input[type="password"]
+{
+    margin: 0;
+    position: relative;
+    top: 50%;
+    left: 30%;
+    // transform: translate(-50%, -50%);
+}
+
+
+.box input[type="text"],
+.box input[type="password"] {
+    border: 0;
+    background: none;
+    display: block;
+    margin: auto;
+    margin-right: 150px;
+    text-align: center;
+    border: 2px solid #3498db;
+    padding: 10px 10px;
+    width: 250px;
+    outline: none;
+    color: white;
+    border-radius: 24px;
+    transition: 0.25s
+}
+
+.box h1, p{
+    color: white;
+    text-transform: uppercase;
+    font-weight: 500
+}
+
+
+.box input[type="text"]:focus,
+.box input[type="password"]:focus {
+    width: 300px;
+    border-color: #2ecc71
+}
+
+.box input[type="submit"] {
+    border: 0;
+    background: none;
+    display: block;
+    margin: 20px auto;
+    text-align: center;
+    border: 2px solid #2ecc71;
+    padding: 14px 40px;
+    outline: none;
+    color: white;
+    border-radius: 24px;
+    transition: 0.25s;
+    cursor: pointer;
+    
+    position: relative;
+    top: 50%;
+    left: 50%;
+}
+
+.box input[type="submit"]:hover {
+    background: #2ecc71
+}
+
+.forgot {
+    text-decoration: underline;
+    margin: 0;
+    position: relative;
+    top: 50%;
+    left: 50%;
+}
