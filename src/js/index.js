@@ -30,7 +30,7 @@ const firebaseConfig = {
 firebase.initializeApp(firebaseConfig);
 firebase.analytics();
 const auth = firebase.auth();
-const db = firebaseApp.firestore();
+const db = firebase.firestore();
 
 export { db, auth };
 
