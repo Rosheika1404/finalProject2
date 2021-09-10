@@ -4,6 +4,8 @@ import { db, auth } from "../index";
 import SendMessage from "./SendMessage";
 import signOut from "../utilities/signOut";
 
+import { Link } from "react-router-dom";
+
 function Chat() {
 	// const scroll = useRef()
 	const [messages, setMessages] = useState([]);
@@ -17,13 +19,16 @@ function Chat() {
 	}, []);
 	return (
 		<div>
-			<button
-				className="btn btn-primary"
-				onClick={() => {
-					signOut();
-				}}>
-				Logout
-			</button>
+			<Link to="/login">
+				<button
+					className="btn btn-primary"
+					onClick={() => {
+						signOut();
+					}}>
+					Logout
+				</button>
+			</Link>
+
 			<div className="msgs">
 				{messages.map(({ id, text, photoURL, uid }) => (
 					<div key={id} className={`msg ${uid === auth.currentUser.uid ? "sent" : "received"}`}>

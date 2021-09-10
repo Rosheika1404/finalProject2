@@ -12,7 +12,6 @@ export const Home = () => {
 		<>
 			<div>
 				<h1 className="display-4 justify-content-center text-center">Lets Chat!</h1>
-
 				<Chat />
 			</div>
 		</>
