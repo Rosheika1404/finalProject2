@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { useHistory } from "react-router-dom";
 import rigoImage from "../../img/rigo-baby.jpg";
-import "../../styles/home.scss";
+// import "../../styles/home.scss";
 import Chat from "../component/Chat";
 
 import "../../styles/chat.scss";
