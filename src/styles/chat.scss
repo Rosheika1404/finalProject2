@@ -27,7 +27,7 @@ img {
   
   .sent {
     background-color: #395dff;
-    color: white;
+    color: black;
     border-top-right-radius: 1000px;
     flex-direction: row-reverse;
     padding: 20px 20px 0 10px;
@@ -40,6 +40,7 @@ img {
     background-color: #FAFAFA;
     border-top-left-radius: 1000px;
     float: left;
+    color:black;
   }
   
   .sendMsg {

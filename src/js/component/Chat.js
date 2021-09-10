@@ -4,8 +4,6 @@ import { db, auth } from "../index";
 import SendMessage from "./SendMessage";
 import signOut from "../utilities/signOut";
 
-import "../../styles/chat.scss";
-
 function Chat() {
 	// const scroll = useRef()
 	const [messages, setMessages] = useState([]);

@@ -4,6 +4,7 @@ import rigoImage from "../../img/rigo-baby.jpg";
 import "../../styles/home.scss";
 import Chat from "../component/Chat";
 
+import "../../styles/chat.scss";
 import { signIn } from "../utilities/signIn";
 
 export const Home = () => {

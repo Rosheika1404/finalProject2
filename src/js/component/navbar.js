@@ -18,9 +18,9 @@ export const Navbar = () => {
 					</Link>
 				) : (
 					<>
-						<Link to="/register">
+						{/* <Link to="/register">
 							<button className="btn btn-primary">Profile</button>
-						</Link>
+						</Link> */}
 						&nbsp;
 						<Link to="/login">
 							<button
