@@ -5,7 +5,7 @@ import signOut from'../utilities/signOut'
 
 function Chat() {
     const scroll = useRef()
-    const [messages, setMessages] = useState()
+    const [messages, setMessages] = useState([])
     useEffect(() => {
         db.collection('messages').orderBy('createdAt').limit(50).onSnapshot(snapshot => {
             setMessages(snapshot.docs.map(doc => doc.data()))
